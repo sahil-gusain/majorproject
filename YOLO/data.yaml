@@ -1,0 +1,10 @@
+names: 
+- fresh_apples 
+- fresh_banana
+- fresh_oranges
+- rotten_apples
+- rotten_banana
+- rotten_oranges
+nc: 6
+train: D:\majorProject\YOLO\train\images
+val: D:\majorProject\YOLO\test\images
