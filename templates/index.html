@@ -1,0 +1,39 @@
+{% extends "import.html" %} 
+{% block content %}
+
+
+<br><h2 class="heading">Spoil Food Detection Using multiple algorithmn </h2><br>
+<div class='container content-cont justify-content-center'>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+         <input type="file" name="file" class="btn btn-success" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+    <select>
+        <option value="option1">YOLO</option>
+        <option value="option2">CNN</option>
+        <option value="option3">KNN</option>
+        <option value="option3">ANN</option>
+        <option value="option3">Pattern Recognation</option>
+    </select>
+    <br>
+
+
+    <div class="image-section" style="display:none;">
+         <img id="imagePreview"  class="img-responsive" src="#" style="width:300px;height:300px;"/><br><br>
+         <div>
+            <button type="button" class="btn btn-info btn-lg " id="btn-predict">Predict!</button>
+         </div>
+    </div>
+
+
+
+    <div class="loader" style="display:none;">
+
+    </div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+
+</div><br><br>
+{% endblock %}
