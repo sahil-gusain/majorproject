@@ -1,8 +1,9 @@
 import os
 import tensorflow as tf
 import numpy as np
-
+import torch
 from PIL import Image
+from joblib import load
 import cv2
 from keras.applications.vgg16 import preprocess_input
 from keras.models import load_model
@@ -15,6 +16,12 @@ app = Flask(__name__)
 
 
 model =load_model('C:\\Users\\sahil\\Desktop\\majorProject\\CNN\\cnn_model.h5')
+modelYolo = torch.load('C:\\Users\\sahil\\Desktop\\majorProject\\YOLO\\runs\\detect\\train\\weights\\best.pt')
+
+modelsvm = load('C:\\Users\\sahil\Desktop\\majorProject\\SVM\\svm_models.dat')
+modelKNNMAn=load('C:\\Users\\sahil\\Desktop\\majorProject\\KNN\\knn_manhattan.joblib')
+modelKNNEu=load('C:\\Users\\sahil\\Desktop\\majorProject\\KNN\\knn_euclidean.joblib')
+
 print('Model loaded. Check http://127.0.0.1:5000/')
 class_label=['Fresh Apple', 'Fresh Banana', 'Fresh Orange', 'Rotten Apple', 'Rotten Banana', 'Rotten Orange']
 
